@@ -6,16 +6,19 @@ public class Character2DController : MonoBehaviour
 {
     public float movementSpeed = 1f;
     public float jumpForce = 1f;
+
     public float dashForce;
     public float startDashTimer;
-    private float currentDashTimer;
-    private float dashDirection;
-    public bool isDashing;
+
     public float dashCD = 1f;
     public float nextDashTime = 0f;
 
+    private float dashDirection;
+    private float currentDashTimer;
+
     private Rigidbody2D rb;
-    
+
+    public bool isDashing;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +57,8 @@ public class Character2DController : MonoBehaviour
                 nextDashTime = Time.time + dashCD;
             }
         }
+        
+        //actual dash code and CD reset
         if (isDashing)
         {
             rb.velocity = new Vector2(dashForce, 0) * dashDirection;

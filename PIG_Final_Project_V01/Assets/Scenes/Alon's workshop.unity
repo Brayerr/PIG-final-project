@@ -149,7 +149,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 488820876}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 147716b7cf370154599bc8947464b9c4, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -255,7 +255,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 558155919}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 147716b7cf370154599bc8947464b9c4, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -331,7 +331,7 @@ Transform:
   m_LocalScale: {x: 10.011887, y: 0.7154193, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &589987145
 GameObject:
@@ -444,7 +444,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1358067967}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 147716b7cf370154599bc8947464b9c4, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -550,7 +550,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1633832724}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 147716b7cf370154599bc8947464b9c4, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -626,7 +626,7 @@ Transform:
   m_LocalScale: {x: 5.6207085, y: 0.7154193, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1880891548
 GameObject:
@@ -656,7 +656,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1880891548}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 147716b7cf370154599bc8947464b9c4, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -876,7 +876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  jumpForce: 5
+  jumpForce: 7
   dashForce: 30
   startDashTimer: 0.1
   dashCD: 1

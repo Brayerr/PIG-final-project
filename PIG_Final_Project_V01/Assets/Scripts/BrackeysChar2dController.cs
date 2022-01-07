@@ -11,11 +11,11 @@ public class BrackeysChar2dController : MonoBehaviour
 	[SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
-	[SerializeField] private Collider2D m_CrouchDisableCollider2;                // A collider that will be disabled when crouching
+	
 
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-	private bool m_Grounded;            // Whether or not the player is grounded.
+	public bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
@@ -94,10 +94,6 @@ public class BrackeysChar2dController : MonoBehaviour
 				// Disable one of the colliders when crouching
 				if (m_CrouchDisableCollider != null)
 					m_CrouchDisableCollider.enabled = false;
-
-				// Disable ceiling check collider when crouching
-				if (m_CrouchDisableCollider2 != null)
-					m_CrouchDisableCollider2.enabled = false;
 			}
 			else
 			{

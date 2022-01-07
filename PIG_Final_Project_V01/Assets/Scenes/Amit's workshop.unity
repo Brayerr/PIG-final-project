@@ -1157,7 +1157,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 529
+    m_Bits: 512
   m_GroundCheck: {fileID: 1712911351}
   m_CeilingCheck: {fileID: 831145360}
   m_CrouchDisableCollider: {fileID: 2036656535}
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 2036656536}
   rb: {fileID: 2036656531}
-  runSpeed: 20
+  runSpeed: 30
   dashForce: 2
   startDashTimer: 0.1
   dashCD: 1

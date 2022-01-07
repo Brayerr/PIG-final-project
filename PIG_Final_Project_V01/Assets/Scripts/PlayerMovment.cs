@@ -60,6 +60,13 @@ public class PlayerMovment : MonoBehaviour
             }
         }
 
+        //Disable crouch when jump 
+        if (jump == true)
+        {
+            crouch = false;
+        }
+
+
     }
 
     private void FixedUpdate()

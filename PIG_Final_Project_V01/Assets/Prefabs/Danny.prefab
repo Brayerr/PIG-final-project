@@ -177,8 +177,8 @@ GameObject:
   - component: {fileID: 6518751401548008416}
   - component: {fileID: 6518751401548008418}
   - component: {fileID: 6518751401548008417}
-  - component: {fileID: 6518751401548008420}
-  - component: {fileID: 6518751401548008419}
+  - component: {fileID: 5511272732671810086}
+  - component: {fileID: 1007476272492906715}
   m_Layer: 8
   m_Name: Danny
   m_TagString: Untagged
@@ -268,7 +268,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1.35}
   m_EdgeRadius: 0
---- !u!114 &6518751401548008420
+--- !u!114 &5511272732671810086
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,27 +277,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6248225571300945348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47502bda2e9e52142bd4e019f806b680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: {fileID: 6518751401548008419}
-  rb: {fileID: 6518751401548008416}
-  runSpeed: 40
-  dashForce: 1
-  startDashTimer: 0.1
-  dashCD: 1
-  nextDashTime: 0
-  isDashing: 0
---- !u!114 &6518751401548008419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6248225571300945348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5eb52762d31aa546a02b572d9cf439b, type: 3}
+  m_Script: {fileID: 11500000, guid: b9f0e78d9e372074f835a7e5bf294cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_JumpForce: 600
@@ -307,16 +287,44 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  m_GroundCheck: {fileID: 6518751401400837940}
-  m_CeilingCheck: {fileID: 6518751401652237495}
-  m_CrouchDisableCollider: {fileID: 6518751401548008417}
+  m_GroundCheck: {fileID: 0}
+  m_CeilingCheck: {fileID: 0}
+  m_CrouchDisableCollider: {fileID: 0}
   m_Grounded: 0
+  m_FacingRight: 1
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1007476272492906715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6248225571300945348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac77b26d00b627488abcb56e8449964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
+  rb: {fileID: 0}
+  runSpeed: 40
+  dashForce: 0
+  startDashTimer: 0
+  dashCD: 1
+  nextDashTime: 0
+  isDashing: 0
+  wallJumpTime: 0.2
+  wallSlideSpeed: 0.3
+  wallDistance: 0.55
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  wallJumpForce: 12.5
 --- !u!1 &6518751401400837941
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,12 +29,14 @@ public class TryPlayerMovment : MonoBehaviour
     RaycastHit2D WallCheckHit;
     float jumpTime;
     public LayerMask wallLayer;
-    public float wallJumpForce = 12.5f;
+    public float wallJumpForce = 18f;
+    public float wallJumpDirection = -1;
+    public Vector2 wallJumpAngle;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        wallJumpAngle.Normalize();
     }
 
     // Update is called once per frame
@@ -50,8 +52,8 @@ public class TryPlayerMovment : MonoBehaviour
         //setting wall jump key
         if (isWallSliding && Input.GetButtonDown("Jump"))
         {
-          jump = true;
-          rb.velocity = new Vector2(rb.velocity.x, wallJumpForce);
+           jump = true;
+           rb.AddForce(new Vector2(wallJumpForce * wallJumpDirection * wallJumpAngle.x, wallJumpForce * wallJumpAngle.y), ForceMode2D.Impulse);
         }
             
         //setting crouch hold key

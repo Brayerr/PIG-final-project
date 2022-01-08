@@ -5342,6 +5342,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
         type: 3}
+      propertyPath: wallDistance
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
       propertyPath: startDashTimer
       value: 0.1
       objectReference: {fileID: 0}

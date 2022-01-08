@@ -136,8 +136,7 @@ public class TryBrackeysChar2dController : MonoBehaviour
 
 
 	private void Flip()
-	{
-		movment.wallJumpDirection *= -1;
+	{		
 		// Switch the way the player is labelled as facing.
 		m_FacingRight = !m_FacingRight;
 

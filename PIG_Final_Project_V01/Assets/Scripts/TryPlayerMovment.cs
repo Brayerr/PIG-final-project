@@ -24,12 +24,13 @@ public class TryPlayerMovment : MonoBehaviour
     //wall jump variables
     public float wallJumpTime = 0.2f;
     public float wallSlideSpeed = 0.3f;
-    public float wallDistance = 0.55f;
+    public float wallDistance = 0.12f;
     bool isWallSliding = false;
     RaycastHit2D WallCheckHit;
     float jumpTime;
     public LayerMask wallLayer;
     public float wallJumpForce = 12.5f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +51,8 @@ public class TryPlayerMovment : MonoBehaviour
         //setting wall jump key
         if (isWallSliding && Input.GetButtonDown("Jump"))
         {
-          jump = true;
-          rb.velocity = new Vector2(rb.velocity.x, wallJumpForce);
+            jump = true;
+            rb.velocity = new Vector2(rb.velocity.x, wallJumpForce);
         }
             
         //setting crouch hold key
@@ -129,8 +130,16 @@ public class TryPlayerMovment : MonoBehaviour
 
         if (isWallSliding)
         {
+            //so the player wont be able to dash off the wall
+            isDashing = false;
             //slowing down the player if he is wall sliding
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, wallSlideSpeed, float.MaxValue));
+            //wall jump 
+            if (Input.GetButtonDown("Jump"))
+            {
+                rb.velocity = new Vector2(-Input.GetAxisRaw("Horizontal") * 15f, wallJumpForce);                
+                isWallSliding = false;
+            }
         }
     }
 }

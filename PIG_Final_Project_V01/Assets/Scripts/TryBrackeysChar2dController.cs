@@ -18,6 +18,7 @@ public class TryBrackeysChar2dController : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	[HideInInspector] public bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	public TryPlayerMovment movment;
 
 	[Header("Events")]
 	[Space]
@@ -135,7 +136,7 @@ public class TryBrackeysChar2dController : MonoBehaviour
 
 
 	private void Flip()
-	{
+	{		
 		// Switch the way the player is labelled as facing.
 		m_FacingRight = !m_FacingRight;
 

@@ -221,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64326099}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9110209, y: -1.1237588, z: -0.25976562}
+  m_LocalPosition: {x: -1.894, y: -1.1237588, z: -0.25976562}
   m_LocalScale: {x: 2.2758474, y: 0.23454495, z: 1}
   m_Children: []
   m_Father: {fileID: 409392325}
@@ -790,7 +790,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15662
+  m_Name: pb_Mesh17780
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2448,7 +2448,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15606
+  m_Name: pb_Mesh17724
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2717,7 +2717,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15484
+  m_Name: pb_Mesh17600
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2986,7 +2986,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15538
+  m_Name: pb_Mesh17654
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3708,8 +3708,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497036873}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.657979, y: -0.72275895, z: -0.25976562}
-  m_LocalScale: {x: 1.0241313, y: 0.23454495, z: 1}
+  m_LocalPosition: {x: 3.744, y: -0.72275895, z: -0.25976562}
+  m_LocalScale: {x: 1.0241313, y: 0.38406736, z: 1}
   m_Children: []
   m_Father: {fileID: 409392325}
   m_RootOrder: 2
@@ -4061,8 +4061,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710191657}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.9200206, y: -0.08475888, z: -0.25976562}
-  m_LocalScale: {x: 2.2658906, y: 0.23454495, z: 1}
+  m_LocalPosition: {x: -2.986, y: -0.094, z: -0.25976562}
+  m_LocalScale: {x: 2.2658906, y: 0.36061287, z: 1}
   m_Children: []
   m_Father: {fileID: 409392325}
   m_RootOrder: 5
@@ -4570,7 +4570,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15568
+  m_Name: pb_Mesh17686
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5003,7 +5003,7 @@ GameObject:
   - component: {fileID: 2088410668}
   - component: {fileID: 2088410667}
   - component: {fileID: 2088410666}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5091,7 +5091,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088410665}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.02, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 3.2032816, z: 0.85861}
   m_Children: []
   m_Father: {fileID: 1756322825}
@@ -5288,26 +5288,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Danny
-      objectReference: {fileID: 0}
-    - target: {fileID: 6518751401548008416, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6518751401548008419, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
-        type: 3}
-      propertyPath: m_WhatIsGround.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 6518751401548008420, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
-        type: 3}
-      propertyPath: dashCD
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6518751401548008420, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
-        type: 3}
-      propertyPath: startDashTimer
-      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6772842789024036734, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
         type: 3}

@@ -5337,6 +5337,11 @@ PrefabInstance:
       objectReference: {fileID: 459643717}
     - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
         type: 3}
+      propertyPath: runSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
       propertyPath: dashForce
       value: 1
       objectReference: {fileID: 0}
@@ -5344,6 +5349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: wallDistance
       value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
+      propertyPath: wallJumpPush
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
         type: 3}
@@ -5369,6 +5379,11 @@ PrefabInstance:
         type: 3}
       propertyPath: wallLayer.m_Bits
       value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 5511272732671810086, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
+      propertyPath: m_AirControl
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5511272732671810086, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
         type: 3}

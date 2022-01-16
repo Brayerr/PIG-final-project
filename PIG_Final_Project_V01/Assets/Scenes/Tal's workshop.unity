@@ -5337,6 +5337,11 @@ PrefabInstance:
       objectReference: {fileID: 459643717}
     - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
         type: 3}
+      propertyPath: airDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
       propertyPath: runSpeed
       value: 40
       objectReference: {fileID: 0}
@@ -5357,13 +5362,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
         type: 3}
+      propertyPath: wallJumpForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
       propertyPath: startDashTimer
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
         type: 3}
       propertyPath: wallSlideSpeed
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
         type: 3}

@@ -31,6 +31,7 @@ public class TryPlayerMovment : MonoBehaviour
     public LayerMask wallLayer;
     public float wallJumpForce = 12.5f;
     public float wallJumpPush = 20f;
+    public float airDelay;
 
     
 
@@ -55,6 +56,7 @@ public class TryPlayerMovment : MonoBehaviour
         {
             jump = true;
             rb.velocity = new Vector2(-Input.GetAxisRaw("Horizontal") * wallJumpPush, wallJumpForce);
+            StartCoroutine(AirControlDelay());
             isWallSliding = false;
         }
             
@@ -138,5 +140,12 @@ public class TryPlayerMovment : MonoBehaviour
             //slowing down the player if he is wall sliding
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, wallSlideSpeed, float.MaxValue));             
         }
+    }
+    
+    IEnumerator AirControlDelay()
+    {
+        control.m_AirControl = false;
+        yield return new WaitForSeconds(airDelay);
+        control.m_AirControl = true;
     }
 }

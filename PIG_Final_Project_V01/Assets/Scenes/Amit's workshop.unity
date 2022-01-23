@@ -1035,12 +1035,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291874227}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3709793, y: 0.6762409, z: 0.14}
-  m_LocalScale: {x: 18.590824, y: 11.099, z: 11.099}
+  m_LocalPosition: {x: 1.3709793, y: 0.6762409, z: 3.85}
+  m_LocalScale: {x: 56.961468, y: 34.00685, z: 34.00685}
   m_Children: []
   m_Father: {fileID: 1575962064}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &368895132 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6518751401652237495, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+    type: 3}
+  m_PrefabInstance: {fileID: 6518751402846534463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &409392324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1203,7 @@ GameObject:
   - component: {fileID: 558155922}
   - component: {fileID: 558155921}
   - component: {fileID: 558155920}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2980,6 +2986,12 @@ Transform:
   m_Father: {fileID: 409392325}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1010336709 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6518751401400837940, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+    type: 3}
+  m_PrefabInstance: {fileID: 6518751402846534463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1379110512
 Mesh:
   m_ObjectHideFlags: 0
@@ -3726,7 +3738,7 @@ GameObject:
   - component: {fileID: 1512254694}
   - component: {fileID: 1512254693}
   - component: {fileID: 1512254692}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4727,6 +4739,30 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1865527783 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+    type: 3}
+  m_PrefabInstance: {fileID: 6518751402846534463}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac77b26d00b627488abcb56e8449964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1865527785 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6518751401548008417, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+    type: 3}
+  m_PrefabInstance: {fileID: 6518751402846534463}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1865527787 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 6518751401548008416, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+    type: 3}
+  m_PrefabInstance: {fileID: 6518751402846534463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1880891548
 GameObject:
   m_ObjectHideFlags: 0
@@ -5284,6 +5320,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1865527787}
+    - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
+      propertyPath: airDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
+      propertyPath: dashForce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
+      propertyPath: wallJumpPush
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007476272492906715, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
+      propertyPath: wallLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 5511272732671810086, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
+      propertyPath: movment
+      value: 
+      objectReference: {fileID: 1865527783}
+    - target: {fileID: 5511272732671810086, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
+      propertyPath: m_GroundCheck
+      value: 
+      objectReference: {fileID: 1010336709}
+    - target: {fileID: 5511272732671810086, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
+      propertyPath: m_CeilingCheck
+      value: 
+      objectReference: {fileID: 368895132}
+    - target: {fileID: 5511272732671810086, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
+        type: 3}
+      propertyPath: m_CrouchDisableCollider
+      value: 
+      objectReference: {fileID: 1865527785}
     - target: {fileID: 6248225571300945348, guid: 3e5fca07a396b3e4fa8c85278ff6a129,
         type: 3}
       propertyPath: m_Name

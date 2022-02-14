@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 7db084d495de4da4baad78a4a31eb874
+  - enabled: 1
+    path: Assets/Scenes/Amit's workshop.unity
+    guid: 8067670da63e17340b0023b33cc112fe
   m_configObjects: {}

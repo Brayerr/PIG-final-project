@@ -4714,6 +4714,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rope (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4762167715613305079, guid: 9354c141ae04acc49bb9e1934b92a6af,
+        type: 3}
+      propertyPath: m_Anchor.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762167715613305079, guid: 9354c141ae04acc49bb9e1934b92a6af,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -2.757499
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762167715613305079, guid: 9354c141ae04acc49bb9e1934b92a6af,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 4.18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9354c141ae04acc49bb9e1934b92a6af, type: 3}
 --- !u!43 &1842081931
@@ -5495,6 +5510,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rope
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762167715613305079, guid: 9354c141ae04acc49bb9e1934b92a6af,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762167715613305079, guid: 9354c141ae04acc49bb9e1934b92a6af,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 4.23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9354c141ae04acc49bb9e1934b92a6af, type: 3}

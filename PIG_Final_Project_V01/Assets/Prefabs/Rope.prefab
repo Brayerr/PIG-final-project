@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hook: {fileID: 4762167715613305078}
-  prefabRopeSegs:
-  - {fileID: 4700959194884700383, guid: 36541770138e8fd488d06777fd3a223c, type: 3}
+  ropePrefab: {fileID: 4700959194884700383, guid: 36541770138e8fd488d06777fd3a223c,
+    type: 3}
   numLinks: 5
 --- !u!1 &4762167715613305073
 GameObject:

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rope : MonoBehaviour
 {
     public Rigidbody2D hook;
-    public GameObject[] prefabRopeSegs;
+    public GameObject ropePrefab;
     public int numLinks = 5;
     // Start is called before the first frame update
     void Start()
@@ -18,8 +18,7 @@ public class Rope : MonoBehaviour
         Rigidbody2D prevBod = hook;
         for (int i = 0; i < numLinks; i++)
         {
-            int index = Random.Range(0, prefabRopeSegs.Length);
-            GameObject newSeg = Instantiate(prefabRopeSegs[index]);
+            GameObject newSeg = Instantiate(ropePrefab);
             newSeg.transform.parent = transform;
             newSeg.transform.position = transform.position;
             HingeJoint2D hj = newSeg.GetComponent<HingeJoint2D>();

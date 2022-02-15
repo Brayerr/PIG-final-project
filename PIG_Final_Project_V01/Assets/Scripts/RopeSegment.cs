@@ -5,7 +5,7 @@ using UnityEngine;
 public class RopeSegment : MonoBehaviour
 {
     public GameObject connectedAbove, connectedBelow;
-    // Start is called before the first frame update
+    private BoxCollider2D collider;
     void Start()
     {
         connectedAbove = GetComponent<HingeJoint2D>().connectedBody.gameObject;
@@ -22,9 +22,13 @@ public class RopeSegment : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (connectedBelow != null)
+        {
+            collider = gameObject.GetComponent<BoxCollider2D>();
+            collider.enabled = false;
+        }
         
     }
 

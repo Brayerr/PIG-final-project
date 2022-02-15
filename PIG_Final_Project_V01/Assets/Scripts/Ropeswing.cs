@@ -28,10 +28,10 @@ public class Ropeswing : MonoBehaviour
 
     void CheckKeyboardInput()
     {
-        if (Input.GetKey(KeyCode.A) && isAttached)
-            rb.AddRelativeForce(new Vector3(-1, 0, 0) * pushForce);
-        if (Input.GetKey(KeyCode.D) && isAttached)
-            rb.AddRelativeForce(new Vector3(1, 0, 0) * pushForce);
+        //if (Input.GetKey(KeyCode.A) && isAttached)
+        //    rb.AddRelativeForce(new Vector3(-1, 0, 0) * pushForce);
+        //if (Input.GetKey(KeyCode.D) && isAttached)
+        //    rb.AddRelativeForce(new Vector3(1, 0, 0) * pushForce);
         if (Input.GetKeyDown(KeyCode.Space) && isAttached)
             Detach();
     }
@@ -52,6 +52,7 @@ public class Ropeswing : MonoBehaviour
         hj.enabled = false;
         hj.connectedBody = null;
         StartCoroutine(AttachedFalse());
+        rb.AddRelativeForce(new Vector3(0, 500, 0));
     }
 
 

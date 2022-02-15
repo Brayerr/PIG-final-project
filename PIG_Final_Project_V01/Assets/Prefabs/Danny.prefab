@@ -179,6 +179,8 @@ GameObject:
   - component: {fileID: 6518751401548008417}
   - component: {fileID: 5511272732671810086}
   - component: {fileID: 1007476272492906715}
+  - component: {fileID: 3957160573200547703}
+  - component: {fileID: 3598706926503621363}
   m_Layer: 8
   m_Name: Danny
   m_TagString: Untagged
@@ -329,6 +331,47 @@ MonoBehaviour:
   wallJumpForce: 12.5
   wallJumpPush: 20
   airDelay: 0
+--- !u!114 &3957160573200547703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6248225571300945348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6a855f0a4ae934d875d6f2b55f65e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  pushForce: 10
+  isAttached: 0
+  attachedRope: {fileID: 0}
+  lastGrabbed: {fileID: 0}
+--- !u!233 &3598706926503621363
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6248225571300945348}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
 --- !u!1 &6518751401400837941
 GameObject:
   m_ObjectHideFlags: 0

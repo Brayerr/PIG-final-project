@@ -21,13 +21,13 @@ public class RopeSegment : MonoBehaviour
             GetComponent<HingeJoint2D>().connectedAnchor = new Vector2(0, 0);
         }
     }
-
+    //checkpoint
     void Update()
     {
         if (connectedBelow != null)
         {
             collider = gameObject.GetComponent<BoxCollider2D>();
-            collider.enabled = false;
+            //collider.enabled = false;
         }
         
     }

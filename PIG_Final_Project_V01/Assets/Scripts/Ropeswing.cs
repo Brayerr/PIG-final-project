@@ -39,11 +39,13 @@ public class Ropeswing : MonoBehaviour
     public void Attach(Rigidbody2D heldRope)
     {
         //is player attached
-        hj.connectedBody = heldRope;
+        //hj.connectedBody = heldRope;
         hj.enabled = true;
         isAttached = true;
         //lastGrabbed = heldRope.gameObject.transform.parent.gameObject;
         attachedRope = heldRope.gameObject.transform.parent;
+        GameObject test = heldRope.gameObject.transform.parent.gameObject;
+        hj.connectedBody = test.GetComponent<Rope>().bottomJoint;
     }
 
     void Detach()
@@ -54,7 +56,7 @@ public class Ropeswing : MonoBehaviour
         StartCoroutine(AttachedFalse());
         rb.AddRelativeForce(new Vector3(0, 500, 0));
     }
-
+    //Checkpoint
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
@@ -76,6 +78,7 @@ public class Ropeswing : MonoBehaviour
     IEnumerator AttachedFalse()
     {
         yield return new WaitForSeconds(0.3f);
-        attachedRope = null;
+        if (!isAttached)
+            attachedRope = null;
     }
 }

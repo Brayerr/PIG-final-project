@@ -14,12 +14,15 @@ public class Player : MonoBehaviour
     public bool playerCanTakeDamage = true;
     //period of time that the player cant take damage
     public float damageDelay = 1.5f;
+    //checkpoint variable
+    public Vector3 checkPoint;
     
     // Start is called before the first frame update        
     void Start()
     {
         //setting player health to the max
         currentHealth = playerMaxHealth;
+        checkPoint = new Vector3(-7.04f, -3.27f, transform.position.z);
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class Player : MonoBehaviour
             //tells bool that player is dead
             playerIsDead = true;
             //resets player position to level start position
-            transform.position = new Vector3(-7.04f, -3.27f, transform.position.z);
+            transform.position = checkPoint;
             //resets player health to max health
             currentHealth = playerMaxHealth;
             //feedback to console

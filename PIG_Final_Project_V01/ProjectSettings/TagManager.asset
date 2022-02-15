@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Rope
   layers:
   - Default
   - TransparentFX

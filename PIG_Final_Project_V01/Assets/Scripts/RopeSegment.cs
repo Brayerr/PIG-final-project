@@ -32,8 +32,4 @@ public class RopeSegment : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("trigger");
-    }
 }

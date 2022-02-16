@@ -105,6 +105,7 @@ public class TryPlayerMovment : MonoBehaviour
             rb.velocity = new Vector2(-Input.GetAxisRaw("Horizontal") * wallJumpPush, wallJumpForce);
             StartCoroutine(AirControlDelay());
             isWallSliding = false;
+
         }
             
         //setting crouch hold key
@@ -174,8 +175,9 @@ public class TryPlayerMovment : MonoBehaviour
             //activating the wall slide and setting the time for the player to jump of the wall
             isWallSliding = true;
             jumpTime = Time.time + wallJumpTime;
-            //wall jump animation
+            //wall slide animation
             animator.SetBool("walled", true);
+            
         }
         else if (jumpTime < Time.time)
         {            
@@ -187,12 +189,14 @@ public class TryPlayerMovment : MonoBehaviour
             //so the player wont be able to dash off the wall
             isDashing = false;
             //slowing down the player if he is wall sliding
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, wallSlideSpeed, float.MaxValue));             
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, wallSlideSpeed, float.MaxValue));
         }
     }
     
     IEnumerator AirControlDelay()
     {
+        //wall slide animation cancel
+        animator.SetBool("walled", false);
         control.m_AirControl = false;
         yield return new WaitForSeconds(airDelay);
         control.m_AirControl = true;

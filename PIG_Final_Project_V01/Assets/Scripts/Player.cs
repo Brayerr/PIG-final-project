@@ -5,9 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //player max health
-    public int playerMaxHealth = 5;
+    public float playerMaxHealth = 5;
     //player current health
-    public int currentHealth;
+    public float currentHealth;
     //checks if player is dead
     public bool playerIsDead = false;
     //checks if player can take damage
@@ -34,15 +34,15 @@ public class Player : MonoBehaviour
     }
 
     //function that checks player health
-    public void PlayerDead(int currentHP)
+    public void PlayerDead(float currentHP)
     {
         //if player health hits 0
-        if(currentHP <= 0)
+        if (currentHP <= 0)
         {
             //tells bool that player is dead
             playerIsDead = true;
             //resets player position to level start position
-            transform.position = checkPoint;
+            transform.position = checkPoint;                
             //resets player health to max health
             currentHealth = playerMaxHealth;
             //feedback to console

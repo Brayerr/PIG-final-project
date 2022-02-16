@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpikesScript : MonoBehaviour
-{
-    [SerializeField] private HealthController healthController;
-
+{    
     //player script reffrence
     Player player;
     //setting spike damage
@@ -14,8 +12,7 @@ public class SpikesScript : MonoBehaviour
     void Start()
     {
         //player script reffrence
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        healthController = GameObject.FindGameObjectWithTag("HealthController").GetComponent<HealthController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();        
     }
 
     // Update is called once per frame
@@ -28,7 +25,6 @@ public class SpikesScript : MonoBehaviour
     void OnCollisionEnter2D(Collision2D coll)
     {  
         //player takes damage from spikes
-        player.TakeDamage(Damage);        
-        healthController.UpdateHealth();
+        player.TakeDamage(Damage);                
     }
 }

@@ -5,28 +5,17 @@ using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
-    private Player player;
-
-    [SerializeField] private Image[] hearts;
+    [SerializeField] private Player player;    
+    [SerializeField] private Image totalHealthBar;
+    [SerializeField] private Image currentHealthBar;
 
     private void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        UpdateHealth();
+    {       
+        totalHealthBar.fillAmount = player.currentHealth / 10;
     }
 
-    public void UpdateHealth()
+    private void Update()
     {
-        for (int i = 0; i < hearts.Length; i++)
-        {
-            if (i < player.currentHealth)
-            {
-                hearts[i].color = Color.red;
-            }
-            else
-            {
-                hearts[i].color = Color.black;
-            }
-        }
+        currentHealthBar.fillAmount = player.currentHealth / 10;
     }
 }

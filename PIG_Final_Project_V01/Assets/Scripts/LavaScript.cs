@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LavaScript : MonoBehaviour
-{
-    [SerializeField] private HealthController healthController;
-
+{    
     //player refference
     Player player;
     //initializing lava damage
@@ -14,8 +12,7 @@ public class LavaScript : MonoBehaviour
     void Start()
     {
         //player script reffrence
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        healthController = GameObject.FindGameObjectWithTag("HealthController").GetComponent<HealthController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();      
     }
 
     // Update is called once per frame
@@ -28,7 +25,6 @@ public class LavaScript : MonoBehaviour
     void OnCollisionEnter2D(Collision2D coll)
     {
         //player takes damage from lava
-        player.TakeDamage(damage);
-        healthController.UpdateHealth();
+        player.TakeDamage(damage);        
     }
 }

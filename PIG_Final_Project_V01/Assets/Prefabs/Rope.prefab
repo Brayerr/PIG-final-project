@@ -48,6 +48,7 @@ MonoBehaviour:
   ropePrefab: {fileID: 4700959194884700383, guid: 36541770138e8fd488d06777fd3a223c,
     type: 3}
   numLinks: 5
+  bottomJoint: {fileID: 0}
 --- !u!1 &4762167715613305073
 GameObject:
   m_ObjectHideFlags: 0

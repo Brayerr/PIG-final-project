@@ -34,6 +34,7 @@ public class TryPlayerMovment : MonoBehaviour
     public float airDelay;
 
     public Animator animator;
+    int isWalkingHash; 
 
     
 
@@ -41,6 +42,7 @@ public class TryPlayerMovment : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        isWalkingHash = Animator.StringToHash("isWalking");
     }
 
     // Update is called once per frame
@@ -49,27 +51,45 @@ public class TryPlayerMovment : MonoBehaviour
         //setting up horizontal movement keys
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
+        bool isWalking = animator.GetBool("isWalking");
+        bool playerRunning = Input.GetButton("Horizontal");
+         
+
         //setting jump key
         if (Input.GetButtonDown("Jump"))
         {
+            //if jumping
             jump = true;
+            //jump animation starts
             animator.SetBool("isJumping", true);
+            animator.SetBool(isWalkingHash, false);
+            
         }
 
         //Animation activation
-        if (Input.GetButtonDown("Horizontal"))
+        //if Left or Right are pressed
+        if (!isWalking && playerRunning)
         {
-            animator.SetBool("isWalking", true);
+            //walking animation starts
+            animator.SetBool(isWalkingHash,true);
         }
-
-        if (Input.GetButtonUp("Horizontal"))
+        //if Left or Right are unpressed
+        if (isWalking && !playerRunning)
         {
-            animator.SetBool("isWalking", false);
+            //walking animation stops
+            animator.SetBool(isWalkingHash, false);
         }
-
+        //if player is on the ground
         if(control.m_Grounded)
         {
+            //stop jumping animation
             animator.SetBool("grounded", true);
+            //stop wall jump animation
+            animator.SetBool("walled", false);
+        }
+        else
+        {
+            animator.SetBool("grounded", false);
         }
 
         if (Input.GetButtonUp("Jump"))
@@ -77,11 +97,6 @@ public class TryPlayerMovment : MonoBehaviour
             animator.SetBool("isJumping", false);
         }
 
-        //if (Input.GetButtonUp("Jump"))
-        //{
-        // jump = false;
-        // animator.SetBool("isJumping", false);
-        //}
 
         //setting wall jump key
         if (isWallSliding && Input.GetButtonDown("Jump"))
@@ -159,6 +174,8 @@ public class TryPlayerMovment : MonoBehaviour
             //activating the wall slide and setting the time for the player to jump of the wall
             isWallSliding = true;
             jumpTime = Time.time + wallJumpTime;
+            //wall jump animation
+            animator.SetBool("walled", true);
         }
         else if (jumpTime < Time.time)
         {            

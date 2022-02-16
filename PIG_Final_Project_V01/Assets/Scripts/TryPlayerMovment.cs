@@ -195,8 +195,6 @@ public class TryPlayerMovment : MonoBehaviour
     
     IEnumerator AirControlDelay()
     {
-        //wall slide animation cancel
-        animator.SetBool("walled", false);
         control.m_AirControl = false;
         yield return new WaitForSeconds(airDelay);
         control.m_AirControl = true;

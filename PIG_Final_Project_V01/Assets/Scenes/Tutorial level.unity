@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4200,10 +4200,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1990909199, guid: 6698aebccec8c6d4ab8cc1639a4965fe, type: 3}
-      propertyPath: m_JumpForce
-      value: 500
-      objectReference: {fileID: 0}
     - target: {fileID: 6738361615166531458, guid: 6698aebccec8c6d4ab8cc1639a4965fe,
         type: 3}
       propertyPath: m_RootOrder
@@ -4269,11 +4265,6 @@ PrefabInstance:
       propertyPath: _score
       value: 
       objectReference: {fileID: 118388763}
-    - target: {fileID: 6738361615166531467, guid: 6698aebccec8c6d4ab8cc1639a4965fe,
-        type: 3}
-      propertyPath: m_Anchor.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6698aebccec8c6d4ab8cc1639a4965fe, type: 3}
 --- !u!1001 &1881189363
@@ -5551,13 +5542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa14f7dfc24ae740a75eedc3fc0e6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Movement: {fileID: 0}
-  Dash: {fileID: 0}
-  WallJump: {fileID: 0}
-  Rope: {fileID: 0}
-  RopeMomentum: {fileID: 0}
-  Spikes: {fileID: 0}
-  Lava: {fileID: 0}
 --- !u!1001 &678315391673462554
 PrefabInstance:
   m_ObjectHideFlags: 0

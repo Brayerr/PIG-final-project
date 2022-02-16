@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     {
         //setting player health to the max
         currentHealth = playerMaxHealth;
+        //setting up checkpoint values as level start values
         checkPoint = new Vector3(-7.04f, -3.27f, transform.position.z);
     }
 

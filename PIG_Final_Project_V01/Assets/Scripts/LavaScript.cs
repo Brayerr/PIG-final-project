@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LavaScript : MonoBehaviour
 {
+    private HealthController healthController;
+
     //player refference
     Player player;
     //initializing lava damage
@@ -26,5 +28,6 @@ public class LavaScript : MonoBehaviour
     {
         //player takes damage from lava
         player.TakeDamage(damage);
+        healthController.UpdateHealth();
     }
 }

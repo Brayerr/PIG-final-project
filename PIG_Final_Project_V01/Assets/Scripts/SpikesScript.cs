@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpikesScript : MonoBehaviour
 {
+    private HealthController healthController;
+
     //player script reffrence
     Player player;
     //setting spike damage
@@ -25,5 +27,6 @@ public class SpikesScript : MonoBehaviour
     {  
         //player takes damage from spikes
         player.TakeDamage(Damage);
+        healthController.UpdateHealth();
     }
 }

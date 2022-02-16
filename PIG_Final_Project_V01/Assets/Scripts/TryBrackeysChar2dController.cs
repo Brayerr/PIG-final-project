@@ -20,6 +20,7 @@ public class TryBrackeysChar2dController : MonoBehaviour
 	private Vector3 m_Velocity = Vector3.zero;
 	public TryPlayerMovment movment;
 
+   
 	[Header("Events")]
 	[Space]
 

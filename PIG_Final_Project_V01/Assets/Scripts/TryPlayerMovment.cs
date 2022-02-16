@@ -33,12 +33,14 @@ public class TryPlayerMovment : MonoBehaviour
     public float wallJumpPush = 20f;
     public float airDelay;
 
+    public Animator animator;
+
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -48,8 +50,38 @@ public class TryPlayerMovment : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         //setting jump key
-        if(Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
+        {
             jump = true;
+            animator.SetBool("isJumping", true);
+        }
+
+        //Animation activation
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            animator.SetBool("isWalking", true);
+        }
+
+        if (Input.GetButtonUp("Horizontal"))
+        {
+            animator.SetBool("isWalking", false);
+        }
+
+        if(control.m_Grounded)
+        {
+            animator.SetBool("grounded", true);
+        }
+
+        if (Input.GetButtonUp("Jump"))
+        {
+            animator.SetBool("isJumping", false);
+        }
+
+        //if (Input.GetButtonUp("Jump"))
+        //{
+        // jump = false;
+        // animator.SetBool("isJumping", false);
+        //}
 
         //setting wall jump key
         if (isWallSliding && Input.GetButtonDown("Jump"))

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LavaScript : MonoBehaviour
 {
-    private HealthController healthController;
+    [SerializeField] private HealthController healthController;
 
     //player refference
     Player player;
@@ -15,6 +15,7 @@ public class LavaScript : MonoBehaviour
     {
         //player script reffrence
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        healthController = GameObject.FindGameObjectWithTag("HealthController").GetComponent<HealthController>();
     }
 
     // Update is called once per frame

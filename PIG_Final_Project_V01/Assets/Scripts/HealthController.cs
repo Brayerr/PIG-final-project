@@ -11,6 +11,7 @@ public class HealthController : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         UpdateHealth();
     }
 
@@ -18,7 +19,7 @@ public class HealthController : MonoBehaviour
     {
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < player.playerMaxHealth)
+            if (i < player.currentHealth)
             {
                 hearts[i].color = Color.red;
             }

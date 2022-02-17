@@ -7,7 +7,7 @@ public class HealthController : MonoBehaviour
 {
     [SerializeField] private Player player;    
     [SerializeField] private Image totalHealthBar;
-    [SerializeField] private Image currentHealthBar;
+    [SerializeField] private Image currentHealthBar;    
 
     private void Start()
     {       

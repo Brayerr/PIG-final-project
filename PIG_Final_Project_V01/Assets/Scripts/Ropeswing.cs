@@ -12,7 +12,7 @@ public class Ropeswing : MonoBehaviour
     public bool isAttached = false;
     public Transform attachedRope;
     public GameObject lastGrabbed;
-
+   
     //public GameObject pulleySelected = null;
 
     private void Awake()
@@ -33,7 +33,9 @@ public class Ropeswing : MonoBehaviour
         //if (Input.GetKey(KeyCode.D) && isAttached)
         //    rb.AddRelativeForce(new Vector3(1, 0, 0) * pushForce);
         if (Input.GetKeyDown(KeyCode.Space) && isAttached)
+        {
             Detach();
+        }
     }
 
     public void Attach(Rigidbody2D heldRope)

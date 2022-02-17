@@ -7,7 +7,6 @@ TagManager:
   - Floor
   - Rope
   - MyCoin
-  - HealthController
   layers:
   - Default
   - TransparentFX

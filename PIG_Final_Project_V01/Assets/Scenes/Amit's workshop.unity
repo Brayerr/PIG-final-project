@@ -3059,6 +3059,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rope
       objectReference: {fileID: 0}
+    - target: {fileID: 4762167715613305079, guid: 9354c141ae04acc49bb9e1934b92a6af,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762167715613305079, guid: 9354c141ae04acc49bb9e1934b92a6af,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 3.13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9354c141ae04acc49bb9e1934b92a6af, type: 3}
 --- !u!1 &618487899
@@ -9828,6 +9838,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMaxHealth: 5
   currentHealth: 0
+  playerMaxLives: 3
+  currentLives: 0
   playerIsDead: 0
   playerCanTakeDamage: 1
   damageDelay: 1.5

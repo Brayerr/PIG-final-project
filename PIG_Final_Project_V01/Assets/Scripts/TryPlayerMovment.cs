@@ -34,7 +34,9 @@ public class TryPlayerMovment : MonoBehaviour
     public float airDelay;
 
     public Animator animator;
-    int isWalkingHash; 
+    int isWalkingHash;
+
+    Ropeswing rS;
 
     
 
@@ -43,6 +45,7 @@ public class TryPlayerMovment : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         isWalkingHash = Animator.StringToHash("isWalking");
+        rS = GameObject.FindGameObjectWithTag("Player").GetComponent<Ropeswing>();
     }
 
     // Update is called once per frame
@@ -137,6 +140,19 @@ public class TryPlayerMovment : MonoBehaviour
         }
 
 
+        if (rS.isAttached == true &&  horizontalMove > 0)
+        {
+            animator.SetBool("isSwinging", true);
+        }
+        else if(rS.isAttached == true && horizontalMove < 0)
+        {
+            animator.SetBool("isSwinging", true);
+        }
+        else
+        {
+            animator.SetBool("isSwinging", false);
+        }
+
     }
 
     private void FixedUpdate()
@@ -195,6 +211,8 @@ public class TryPlayerMovment : MonoBehaviour
     
     IEnumerator AirControlDelay()
     {
+        //wall slide animation cancel
+        animator.SetBool("walled", false);
         control.m_AirControl = false;
         yield return new WaitForSeconds(airDelay);
         control.m_AirControl = true;

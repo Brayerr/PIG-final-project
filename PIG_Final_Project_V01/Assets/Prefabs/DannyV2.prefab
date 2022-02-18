@@ -191,7 +191,7 @@ MonoBehaviour:
   dashCD: 1
   nextDashTime: 0
   isDashing: 0
-  wallJumpTime: 0.2
+  wallJumpTime: 0
   wallSlideSpeed: 0.3
   wallDistance: 0.55
   wallLayer:
@@ -214,22 +214,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_JumpForce: 500
-  m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 512
   m_GroundCheck: {fileID: 6738361616818945549}
-  m_CeilingCheck: {fileID: 6738361617072975590}
-  m_CrouchDisableCollider: {fileID: 0}
   m_Grounded: 0
   m_FacingRight: 1
   movment: {fileID: 1990909194}
   OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6738361615633839695

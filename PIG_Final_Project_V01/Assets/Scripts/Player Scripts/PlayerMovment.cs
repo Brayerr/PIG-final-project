@@ -169,12 +169,11 @@ public class PlayerMovment : MonoBehaviour
 
         if (WallCheckHit && !control.m_Grounded && horizontalMove != 0)
         {
-            //activating the wall slide and setting the time for the player to jump of the wall
+            //activating the wall slide. 
             isWallSliding = true;
             jumpTime = Time.time + wallJumpTime;
             //wall slide animation
             animator.SetBool("walled", true);
-            
         }
         else if (jumpTime < Time.time)
         {            

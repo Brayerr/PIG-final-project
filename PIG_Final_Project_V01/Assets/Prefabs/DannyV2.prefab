@@ -146,6 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMaxHealth: 5
   currentHealth: 0
+  playerMaxLives: 3
+  currentLives: 0
   playerIsDead: 0
   playerCanTakeDamage: 1
   damageDelay: 1.5
@@ -1096,6 +1098,12 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.12596314
       objectReference: {fileID: 0}
+    - target: {fileID: 828177632005322396, guid: 38f4440aaec618e4cae3a06eb93dfa70,
+        type: 3}
+      propertyPath: m_Materials.Array.data[6]
+      value: 
+      objectReference: {fileID: -640063867121917104, guid: 38f4440aaec618e4cae3a06eb93dfa70,
+        type: 3}
     - target: {fileID: 919132149155446097, guid: 38f4440aaec618e4cae3a06eb93dfa70,
         type: 3}
       propertyPath: m_Name
@@ -1411,6 +1419,12 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.12352792
       objectReference: {fileID: 0}
+    - target: {fileID: 4800545675622748477, guid: 38f4440aaec618e4cae3a06eb93dfa70,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -414921334540547795, guid: 38f4440aaec618e4cae3a06eb93dfa70,
+        type: 3}
     - target: {fileID: 5048025441337412694, guid: 38f4440aaec618e4cae3a06eb93dfa70,
         type: 3}
       propertyPath: m_LocalRotation.w

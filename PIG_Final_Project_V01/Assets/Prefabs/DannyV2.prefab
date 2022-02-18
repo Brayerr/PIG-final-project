@@ -191,7 +191,7 @@ MonoBehaviour:
   dashCD: 1
   nextDashTime: 0
   isDashing: 0
-  wallJumpTime: 0.2
+  wallJumpTime: 0
   wallSlideSpeed: 0.3
   wallDistance: 0.55
   wallLayer:

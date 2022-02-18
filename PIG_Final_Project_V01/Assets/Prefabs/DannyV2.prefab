@@ -199,7 +199,7 @@ MonoBehaviour:
     m_Bits: 1024
   wallJumpForce: 12.5
   wallJumpPush: 5
-  airDelay: 0.3
+  airDelay: 0.45
   animator: {fileID: 0}
 --- !u!114 &1990909199
 MonoBehaviour:

@@ -74,8 +74,6 @@ public class Player : MonoBehaviour
         {
             //player health - damage
             currentHealth -= dmg;
-            //starts coroutine for player take damage delay
-            StartCoroutine(PlayerTakeDamageDelay());
             //feedback that player got hit
             Debug.Log("hit player");        
         }
@@ -86,7 +84,7 @@ public class Player : MonoBehaviour
     }
 
     //coroutine for player invincibility
-    IEnumerator PlayerTakeDamageDelay()
+    public IEnumerator PlayerTakeDamageDelay()
     {
         //player cant take damage
         playerCanTakeDamage = false;

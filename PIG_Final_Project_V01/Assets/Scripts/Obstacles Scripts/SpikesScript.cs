@@ -4,27 +4,23 @@ using UnityEngine;
 
 public class SpikesScript : MonoBehaviour
 {    
-    //player script reffrence
+    //Player script reffrence
     Player player;
-    //setting spike damage
+
+    //Setting spike damage
     public int Damage = 1;
+
     // Start is called before the first frame update
     void Start()
     {
-        //player script reffrence
+        //Player script reffrence
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    //when colliding with spike
+    //When colliding with spike
     void OnCollisionEnter2D(Collision2D coll)
     {  
-        //player takes damage from spikes
+        //Player takes damage from spikes
         player.TakeDamage(Damage);                
     }
 }

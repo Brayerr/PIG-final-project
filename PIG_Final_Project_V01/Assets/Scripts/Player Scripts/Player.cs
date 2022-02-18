@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     //function that checks player health
     public void PlayerDead(float currentHP)
     {
-        if (currentLives >= 0)
+        if (currentLives > 0)
         {
             //if player health hits 0
             if (currentHP <= 0)
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene("GameOver");
         }
     }
 

@@ -21,6 +21,8 @@ public class SpikesScript : MonoBehaviour
     void OnCollisionEnter2D(Collision2D coll)
     {  
         //Player takes damage from spikes
-        player.TakeDamage(Damage);                
+        player.TakeDamage(Damage);
+        //starts coroutine for player take damage delay from spikes
+        StartCoroutine(player.PlayerTakeDamageDelay());
     }
 }

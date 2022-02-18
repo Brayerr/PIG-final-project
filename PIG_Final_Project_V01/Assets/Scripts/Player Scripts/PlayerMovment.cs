@@ -172,8 +172,6 @@ public class PlayerMovment : MonoBehaviour
             //activating the wall slide. 
             isWallSliding = true;
             jumpTime = Time.time + wallJumpTime;
-            //wall slide animation
-            animator.SetBool("walled", true);
         }
         else if (jumpTime < Time.time)
         {            
@@ -182,6 +180,8 @@ public class PlayerMovment : MonoBehaviour
 
         if (isWallSliding)
         {
+            //wall slide animation
+            animator.SetBool("walled", true);
             //so the player wont be able to dash off the wall
             isDashing = false;
             //slowing down the player if he is wall sliding
@@ -191,8 +191,6 @@ public class PlayerMovment : MonoBehaviour
     
     IEnumerator AirControlDelay()
     {
-        //wall slide animation cancel
-        animator.SetBool("walled", false);
         control.m_AirControl = false;
         yield return new WaitForSeconds(airDelay);
         control.m_AirControl = true;

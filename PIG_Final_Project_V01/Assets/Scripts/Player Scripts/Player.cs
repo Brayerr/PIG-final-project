@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene("GameOver");
         }
     }
 

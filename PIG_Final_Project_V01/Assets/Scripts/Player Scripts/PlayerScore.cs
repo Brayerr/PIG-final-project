@@ -9,6 +9,7 @@ public class PlayerScore : MonoBehaviour
 {
     public int score = 0;
     public TextMeshProUGUI _score;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class PlayerScore : MonoBehaviour
         
     }
 
+    //method to add score to player when colliding with coins and update the UI.
     private void OnTriggerEnter2D(Collider2D other)
     {
         Collectable collectable = other.GetComponent<Collectable>();

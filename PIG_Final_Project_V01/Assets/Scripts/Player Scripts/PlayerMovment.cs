@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TryPlayerMovment : MonoBehaviour
+public class PlayerMovment : MonoBehaviour
 {
-    public TryBrackeysChar2dController control;
+    public CharacterController control;
     public Rigidbody2D rb;
 
     public float runSpeed = 40f;
@@ -18,10 +18,9 @@ public class TryPlayerMovment : MonoBehaviour
     float currentDashTimer;
     float horizontalMove = 0f;
     bool jump = false;
-    bool crouch = false;
     public bool isDashing;
 
-    //wall jump variables
+    //wall jump variables.
     public float wallJumpTime = 0.2f;
     public float wallSlideSpeed = 0.3f;
     public float wallDistance = 0.12f;
@@ -33,13 +32,12 @@ public class TryPlayerMovment : MonoBehaviour
     public float wallJumpPush = 20f;
     public float airDelay;
 
+    //Animator variables.
     public Animator animator;
     int isWalkingHash;
 
     Ropeswing rS;
-
-    
-
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -108,17 +106,8 @@ public class TryPlayerMovment : MonoBehaviour
             rb.velocity = new Vector2(-Input.GetAxisRaw("Horizontal") * wallJumpPush, wallJumpForce);
             StartCoroutine(AirControlDelay());
             isWallSliding = false;
-
         }
             
-        //setting crouch hold key
-        if (Input.GetButtonDown("Crouch"))
-            crouch = true;
-
-        //if player stops pressing crouch key it stops crouching
-        else if(Input.GetButtonUp("Crouch"))
-            crouch = false;
-
         //dash code + dash cooldown
         if (Time.time > nextDashTime)
         {
@@ -133,13 +122,6 @@ public class TryPlayerMovment : MonoBehaviour
             }
         }
 
-        //Disable crouch when jump 
-        if (jump == true)
-        {
-            crouch = false;
-        }
-
-
         if (rS.isAttached == true &&  horizontalMove > 0)
         {
             animator.SetBool("isSwinging", true);
@@ -152,13 +134,12 @@ public class TryPlayerMovment : MonoBehaviour
         {
             animator.SetBool("isSwinging", false);
         }
-
     }
 
     private void FixedUpdate()
     {
         //actual moving player in fixed update
-        control.Move(horizontalMove* Time.fixedDeltaTime, crouch, jump);
+        control.Move(horizontalMove* Time.fixedDeltaTime, jump);
         //set jump back to false after jumping
         jump = false;
 

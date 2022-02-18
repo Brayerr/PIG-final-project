@@ -12,12 +12,14 @@ public class LivesController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Setting the fill amount of the image according to the player Lives.
         totalLivesBar.fillAmount = player.currentLives / 10;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Increase and decrease the fill amount of the image according to the player Lives.
         currentLivesBar.fillAmount = player.currentLives / 10;
     }
 }

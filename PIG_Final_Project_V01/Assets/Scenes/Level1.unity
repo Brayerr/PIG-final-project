@@ -9984,6 +9984,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1154446176}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1731543601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8574378378249304574, guid: 5b2d2e5df8d1c4846b717a05458efe1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8574378378736679887}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1731543602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731543601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24e37d1b9bb0bb4c9d96f2a1ad26c09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1375899974371946737, guid: 03851a1187fa4994d86a32c648bfca5c,
+    type: 3}
+  speed: 5
+  firingDelay: 2
 --- !u!4 &1748342995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3398699672700690088, guid: 455fb3f08f1edff4b92cbaad195f1a46,
@@ -12267,6 +12289,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2599659318059397130, guid: f8b98d094d365b641b77a8b613a118ff,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2df3bc278a2f6ec4f8041f86b30e7877, type: 2}
     - target: {fileID: 5266729023542564785, guid: f8b98d094d365b641b77a8b613a118ff,
         type: 3}
       propertyPath: m_Mesh
@@ -12715,5 +12742,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeShooter
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8574378378249304573, guid: 5b2d2e5df8d1c4846b717a05458efe1a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5b2d2e5df8d1c4846b717a05458efe1a, type: 3}

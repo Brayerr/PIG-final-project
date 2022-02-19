@@ -146,7 +146,7 @@ public class PlayerMovment : MonoBehaviour
             GodModeOn();
 
         //if pressed G while god mode is on, make god mode off
-        if (Input.GetKeyDown(KeyCode.G) && godModeActive)
+        if (godModeActive && Input.GetKeyDown(KeyCode.H))
             GodModeOff();
 
 
@@ -245,6 +245,8 @@ public class PlayerMovment : MonoBehaviour
         player.playerCanTakeDamage = false;
         //setting bool to true
         godModeActive = true;
+        //feedback
+        Debug.Log("God mode ON");
     }
 
     //god mode off function
@@ -256,5 +258,7 @@ public class PlayerMovment : MonoBehaviour
         player.playerCanTakeDamage = true;
         //god mode is off
         godModeActive = false;
+        //feedback
+        Debug.Log("God mode OFF");
     }
 }

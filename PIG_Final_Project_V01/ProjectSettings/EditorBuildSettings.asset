@@ -19,11 +19,8 @@ EditorBuildSettings:
     guid: 8067670da63e17340b0023b33cc112fe
   - enabled: 1
     path: Assets/Scenes/WonGame.unity
-    guid: 07091e25e36791c4ebf65a39408da076
+    guid: 073fc907c47c6f7428d07eef2b6867f7
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 1db0ddac62cb8104089d569aaa8aff52
-  - enabled: 1
-    path: Assets/Scenes/Tal's workshop.unity
-    guid: e7587c75a0d6af143b42c737b5ece0d7
   m_configObjects: {}

@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A Script that generates a customizable hinge joint rope
+/// </summary>
 public class Rope : MonoBehaviour
 {
-    public Rigidbody2D hook;
-    public GameObject ropePrefab;
-    public int numLinks = 5;
-    public Rigidbody2D bottomJoint;
-    // Start is called before the first frame update
+    public Rigidbody2D hook;            //track the rope hook
+    public GameObject ropePrefab;       //segmant prefab
+    public int numLinks = 5;            //rope length
+    public Rigidbody2D bottomJoint;     //track the last joint
+
     void Start()
     {
         GenerateRope();

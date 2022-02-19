@@ -18,6 +18,7 @@ public class ProjectileBreak : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("bruh");
         Destroy(this.gameObject, 0.2f);
     }
 }

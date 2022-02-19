@@ -187,12 +187,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 1990909199}
   rb: {fileID: 6738361615166531457}
+  player: {fileID: 6738361615166531465}
+  godModeForce: 50
+  godModeActive: 0
   runSpeed: 40
   dashForce: 1
   startDashTimer: 0
   dashCD: 1
   nextDashTime: 0
   horizontalMove: 0
+  verticalMove: 0
   isDashing: 0
   wallJumpTime: 0
   wallSlideSpeed: 0.3

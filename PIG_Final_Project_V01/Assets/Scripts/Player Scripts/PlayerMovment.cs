@@ -6,6 +6,10 @@ public class PlayerMovment : MonoBehaviour
 {
     public CharacterController control;
     public Rigidbody2D rb;
+    public Player player;
+
+    public int godModeForce;
+    public bool godModeActive = false;
 
     public float runSpeed = 40f;
     public float dashForce;
@@ -17,6 +21,7 @@ public class PlayerMovment : MonoBehaviour
     float dashDirection;
     float currentDashTimer;
     public float horizontalMove = 0f;
+    public float verticalMove = 0f;
     bool jump = false;
     public bool isDashing;
 
@@ -135,6 +140,40 @@ public class PlayerMovment : MonoBehaviour
         {
             animator.SetBool("isSwinging", false);
         }
+
+        //if pressed G god mode will activate
+        if (Input.GetKeyDown(KeyCode.G))
+            GodModeOn();
+
+        //if pressed G while god mode is on, make god mode off
+        if (Input.GetKeyDown(KeyCode.G) && godModeActive)
+            GodModeOff();
+
+
+        //if pressed down arrow player will go down
+        if (Input.GetKeyDown(KeyCode.DownArrow) && godModeActive)
+        {
+            rb.AddForce(Vector2.down * godModeForce);
+        }
+
+        //if pressed up arrow the player will go up
+        if (Input.GetKeyDown(KeyCode.UpArrow) && godModeActive)
+        {
+            rb.AddForce(Vector2.up * godModeForce);
+        }
+
+        //if pressed right arrow the player will go right
+        if (Input.GetKeyDown(KeyCode.RightArrow) && godModeActive)
+        {
+            rb.AddForce(Vector2.right * godModeForce);
+        }
+
+        //if pressed left arrow the player will go left
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && godModeActive)
+        {
+            rb.AddForce(Vector2.left * godModeForce);
+        }
+
     }
 
     private void FixedUpdate()
@@ -195,5 +234,27 @@ public class PlayerMovment : MonoBehaviour
         control.m_AirControl = false;
         yield return new WaitForSeconds(airDelay);
         control.m_AirControl = true;
+    }
+
+    //god mode on function
+    public void GodModeOn()
+    {
+        //make player weight 0
+        rb.gravityScale = 0;
+        //player cant take damage
+        player.playerCanTakeDamage = false;
+        //setting bool to true
+        godModeActive = true;
+    }
+
+    //god mode off function
+    public void GodModeOff()
+    {
+        //player weight 3
+        rb.gravityScale = 3;
+        //player can take damage again
+        player.playerCanTakeDamage = true;
+        //god mode is off
+        godModeActive = false;
     }
 }

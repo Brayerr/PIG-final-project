@@ -16,4 +16,13 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    //Method to load level select scene in case the level select button was pressed
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("Level Select Menu");
+    }
+
+
 }
+

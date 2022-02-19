@@ -4371,6 +4371,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DannyV2
       objectReference: {fileID: 0}
+    - target: {fileID: 6738361615166531465, guid: 6698aebccec8c6d4ab8cc1639a4965fe,
+        type: 3}
+      propertyPath: verticalKnockBackForce
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738361615166531465, guid: 6698aebccec8c6d4ab8cc1639a4965fe,
+        type: 3}
+      propertyPath: horizontalKnockBackForce
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 6738361615166531466, guid: 6698aebccec8c6d4ab8cc1639a4965fe,
         type: 3}
       propertyPath: _score

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1487462173332895249}
   m_Layer: 0
   m_Name: Spike1
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -478,4 +478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc53397bc4245b4bb4212f6e3fe39b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BloodEffect: {fileID: 2801372156749129087, guid: 6637ae8180390a4469c453e6d75a3324,
+    type: 3}
   Damage: 1

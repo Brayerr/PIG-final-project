@@ -5,6 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    //rigidbody refference
+    Rigidbody2D rb2d;
+    //checkpoint variable
+    public Vector3 checkPoint;
+    //movement script refference
+    PlayerMovment playerMovment;
+    //spikes script refference
+    SpikesScript spikes;
+    //danny refference
+    Transform danny;
+
+
+
+
     //player max health
     public float playerMaxHealth = 5;
     //player current health
@@ -19,9 +33,17 @@ public class Player : MonoBehaviour
     public bool playerCanTakeDamage = true;
     //period of time that the player cant take damage
     public float damageDelay = 1.5f;
-    //checkpoint variable
-    public Vector3 checkPoint;
-    
+
+
+    //vertical knockback force
+    public int verticalKnockBackForce = 2;
+    //horizontal knockback force
+    public int horizontalKnockBackForce = 2;
+
+
+
+
+
     // Start is called before the first frame update        
     void Start()
     {
@@ -31,6 +53,16 @@ public class Player : MonoBehaviour
         currentLives = playerMaxLives;
         //setting up checkpoint values as level start values
         checkPoint = new Vector3(-7.04f, -3.27f, transform.position.z);
+        //rigidbody refference
+        rb2d = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+        //movement script refference
+        playerMovment = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovment>();
+        //spikes script refference
+        spikes = GameObject.FindGameObjectWithTag("Spike").GetComponent<SpikesScript>();
+        //danny refference
+        danny = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+
     }
 
     // Update is called once per frame
@@ -75,7 +107,11 @@ public class Player : MonoBehaviour
             //player health - damage
             currentHealth -= dmg;
             //feedback that player got hit
-            Debug.Log("hit player");        
+            Debug.Log("hit player");
+            //instantiating particle effect for damage taking
+            Instantiate(spikes.BloodEffect, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), transform.rotation, danny);
+            //starts coroutine for player take damage delay from spikes
+            StartCoroutine(PlayerTakeDamageDelay());
         }
         //if player cant take damage
         else
@@ -92,5 +128,32 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(damageDelay);
         //player can take damage again
         playerCanTakeDamage = true;
+    }
+
+    public void HandleKnockBack()
+    {
+        if (playerCanTakeDamage == true)
+        { 
+            //knockback up
+            rb2d.AddForce(Vector2.up * verticalKnockBackForce);
+            Debug.Log("KB UP");
+
+            //if player walks right when being hit
+            if(playerMovment.horizontalMove > 0)
+            {
+                //, he gets knockbacked to the left
+                rb2d.AddForce(Vector2.left * horizontalKnockBackForce);
+                Debug.Log("KB LEFT");
+            }
+
+            //if player walks left when being hit
+            else if (playerMovment.horizontalMove < 0)
+            {
+                //, he gets knockbacked to the right
+                rb2d.AddForce(Vector2.right * horizontalKnockBackForce);
+                Debug.Log("KB RIGHT");
+
+            }
+        }
     }
 }

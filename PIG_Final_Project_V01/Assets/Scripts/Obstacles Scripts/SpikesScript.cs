@@ -6,6 +6,9 @@ public class SpikesScript : MonoBehaviour
 {    
     //Player script reffrence
     Player player;
+    //particle effect refference
+    public GameObject BloodEffect;
+
 
     //Setting spike damage
     public int Damage = 1;
@@ -15,14 +18,18 @@ public class SpikesScript : MonoBehaviour
     {
         //Player script reffrence
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();        
+
     }
 
     //When colliding with spike
     void OnCollisionEnter2D(Collision2D coll)
-    {  
-        //Player takes damage from spikes
-        player.TakeDamage(Damage);
-        //starts coroutine for player take damage delay from spikes
-        StartCoroutine(player.PlayerTakeDamageDelay());
+    {
+        if (coll.gameObject.CompareTag("Player"))
+        {
+            //Player takes damage from spikes
+            player.TakeDamage(Damage);
+            //player gets knocked back from spike
+            player.HandleKnockBack();
+        }
     }
 }

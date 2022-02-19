@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6a855f0a4ae934d875d6f2b55f65e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 6738361615166531457}
   pushForce: 10
   isAttached: 0
   attachedRope: {fileID: 0}
@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505e8d2bc6e44b14a983490a05e8aefc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkPoint: {x: 0, y: 0, z: 0}
   playerMaxHealth: 5
   currentHealth: 0
   playerMaxLives: 3
@@ -151,7 +152,8 @@ MonoBehaviour:
   playerIsDead: 0
   playerCanTakeDamage: 1
   damageDelay: 1.5
-  checkPoint: {x: 0, y: 0, z: 0}
+  verticalKnockBackForce: 400
+  horizontalKnockBackForce: 500
 --- !u!95 &1990909193
 Animator:
   serializedVersion: 3
@@ -190,6 +192,7 @@ MonoBehaviour:
   startDashTimer: 0
   dashCD: 1
   nextDashTime: 0
+  horizontalMove: 0
   isDashing: 0
   wallJumpTime: 0
   wallSlideSpeed: 0.3
@@ -200,7 +203,7 @@ MonoBehaviour:
   wallJumpForce: 12.5
   wallJumpPush: 5
   airDelay: 0.45
-  animator: {fileID: 0}
+  animator: {fileID: 1990909193}
 --- !u!114 &1990909199
 MonoBehaviour:
   m_ObjectHideFlags: 0

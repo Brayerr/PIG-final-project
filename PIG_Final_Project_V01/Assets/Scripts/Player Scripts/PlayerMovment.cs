@@ -16,7 +16,7 @@ public class PlayerMovment : MonoBehaviour
 
     float dashDirection;
     float currentDashTimer;
-    float horizontalMove = 0f;
+    public float horizontalMove = 0f;
     bool jump = false;
     public bool isDashing;
 
@@ -52,6 +52,7 @@ public class PlayerMovment : MonoBehaviour
         //setting up horizontal movement keys
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
+        
         bool isWalking = animator.GetBool("isWalking");
         bool playerRunning = Input.GetButton("Horizontal");
          

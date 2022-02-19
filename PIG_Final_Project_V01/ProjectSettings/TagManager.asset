@@ -10,6 +10,8 @@ TagManager:
   - Spike
   - Blood
   - Pause Menu
+  - Projectile
+  - ProjShredder
   layers:
   - Default
   - TransparentFX

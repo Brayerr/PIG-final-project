@@ -10,7 +10,6 @@ public class PlatformAttach : MonoBehaviour
     //set the player so it can adjust its location from the platform
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("enter");
         if (other.CompareTag(PLAYER_TAG))
         {
             player = other.transform;

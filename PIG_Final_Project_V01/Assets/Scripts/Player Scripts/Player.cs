@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
     Transform danny;
     //blood reference
     public ParticleSystem bloodEffect;
+    //Animator Reference
+    Animator animator;
+
 
 
 
@@ -41,7 +44,7 @@ public class Player : MonoBehaviour
     public int verticalKnockBackForce = 2;
     //horizontal knockback force
     public int horizontalKnockBackForce = 2;
-
+    
 
 
 
@@ -66,6 +69,9 @@ public class Player : MonoBehaviour
         //find blood game object
         //bloodEffect = GameObject.FindGameObjectWithTag("Blood");
 
+        //animator reference
+        animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -85,10 +91,10 @@ public class Player : MonoBehaviour
             {
                 //tells bool that player is dead
                 playerIsDead = true;
-                //player died so removing 1 life
-                currentLives--;
-                //resets player position to level start position
-                transform.position = checkPoint;
+                
+                
+                StartCoroutine(DeathDelay());
+                
                 //resets player health to max health
                 currentHealth = playerMaxHealth;
                 //feedback to console
@@ -158,5 +164,20 @@ public class Player : MonoBehaviour
 
             }
         }
+    }
+
+    public IEnumerator DeathDelay()
+    {
+        Debug.Log("isDead");
+        //player death animation
+        animator.SetBool("isDead", true);
+        yield return new WaitForSeconds(2);
+        //Stop death
+        animator.SetBool("isDead", false);
+        //player died so removing 1 life
+        currentLives--;
+        //resets player position to level start position
+        transform.position = checkPoint;
+
     }
 }

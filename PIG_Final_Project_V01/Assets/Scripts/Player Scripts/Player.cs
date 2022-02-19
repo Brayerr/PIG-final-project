@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
         //player death animation
         animator.SetBool("isDead", true);
         GetComponent<PlayerMovment>().enabled = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.9f);
         GetComponent<PlayerMovment>().enabled = true;
         //Stop death
         animator.SetBool("isDead", false);

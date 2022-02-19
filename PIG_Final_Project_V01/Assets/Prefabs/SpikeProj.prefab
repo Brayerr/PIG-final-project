@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5765903848074151882}
   - component: {fileID: 3536135374828281395}
   - component: {fileID: 2113399748067343964}
+  - component: {fileID: 6008260606493366138}
   m_Layer: 0
   m_Name: SpikeProj
   m_TagString: Untagged
@@ -511,6 +512,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1375899974371946737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebcd6716171e28a4abb8910d6469ae08, type: 3}
+  m_Script: {fileID: 11500000, guid: 5dc53397bc4245b4bb4212f6e3fe39b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 1
+--- !u!114 &6008260606493366138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375899974371946737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7924ca47e2a334293799a60bb1cb4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

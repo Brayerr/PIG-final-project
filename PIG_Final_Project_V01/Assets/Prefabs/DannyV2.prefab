@@ -90,10 +90,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6738361615166531457}
-  pushForce: 10
+  detachforce: 400
   isAttached: 0
   attachedRope: {fileID: 0}
-  lastGrabbed: {fileID: 0}
 --- !u!233 &6738361615166531467
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -145,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkPoint: {x: 0, y: 0, z: 0}
+  bloodEffect: {fileID: 0}
   playerMaxHealth: 5
   currentHealth: 0
   playerMaxLives: 3

@@ -121,6 +121,7 @@ public class PlayerMovment : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift) && horizontalMove != 0)
             {
                 isDashing = true;
+                animator.SetTrigger("isDashing 0");                
                 currentDashTimer = startDashTimer;
                 rb.velocity = Vector2.zero;
                 dashDirection = (int)horizontalMove;
@@ -194,7 +195,10 @@ public class PlayerMovment : MonoBehaviour
             dashCD -= Time.deltaTime;
 
             if (currentDashTimer <= 0)
+            {
                 isDashing = false;
+            }
+
         }
 
         //wall jump

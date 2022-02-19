@@ -17,9 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Amit's workshop.unity
     guid: 8067670da63e17340b0023b33cc112fe
-  - enabled: 1
-    path: Assets/Scenes/WonGame.unity
-    guid: 073fc907c47c6f7428d07eef2b6867f7
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 1db0ddac62cb8104089d569aaa8aff52

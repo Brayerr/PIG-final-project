@@ -4304,6 +4304,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1990909194, guid: 6698aebccec8c6d4ab8cc1639a4965fe, type: 3}
+      propertyPath: godModeForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990909194, guid: 6698aebccec8c6d4ab8cc1639a4965fe, type: 3}
       propertyPath: wallDistance
       value: 0.2
       objectReference: {fileID: 0}

@@ -143,18 +143,20 @@ public class PlayerMovment : MonoBehaviour
 
         //if pressed G god mode will activate
         if (Input.GetKeyDown(KeyCode.G))
+        {
             GodModeOn();
+        }
 
         //if pressed G while god mode is on, make god mode off
         if (godModeActive && Input.GetKeyDown(KeyCode.H))
             GodModeOff();
 
-
-        //if pressed down arrow player will go down
+        //vertical movement for god mode
         if (Input.GetKeyDown(KeyCode.DownArrow) && godModeActive)
         {
             rb.AddForce(Vector2.down * godModeForce);
         }
+
 
         //if pressed up arrow the player will go up
         if (Input.GetKeyDown(KeyCode.UpArrow) && godModeActive)

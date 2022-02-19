@@ -8,6 +8,7 @@ TagManager:
   - Rope
   - MyCoin
   - Spike
+  - Blood
   layers:
   - Default
   - TransparentFX

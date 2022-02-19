@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     SpikesScript spikes;
     //danny refference
     Transform danny;
+    //blood reference
+    public ParticleSystem bloodEffect;
 
 
 
@@ -61,7 +63,8 @@ public class Player : MonoBehaviour
         spikes = GameObject.FindGameObjectWithTag("Spike").GetComponent<SpikesScript>();
         //danny refference
         danny = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
+        //find blood game object
+        //bloodEffect = GameObject.FindGameObjectWithTag("Blood");
 
     }
 
@@ -109,7 +112,7 @@ public class Player : MonoBehaviour
             //feedback that player got hit
             Debug.Log("hit player");
             //instantiating particle effect for damage taking
-            Instantiate(spikes.BloodEffect, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), transform.rotation, danny);
+            Instantiate(bloodEffect, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), transform.rotation, danny);
             //starts coroutine for player take damage delay from spikes
             StartCoroutine(PlayerTakeDamageDelay());
         }

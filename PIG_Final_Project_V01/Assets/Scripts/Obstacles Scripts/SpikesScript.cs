@@ -6,8 +6,6 @@ public class SpikesScript : MonoBehaviour
 {    
     //Player script reffrence
     Player player;
-    //particle effect refference
-    public GameObject BloodEffect;
 
 
     //Setting spike damage
@@ -26,10 +24,10 @@ public class SpikesScript : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Player"))
         {
-            //Player takes damage from spikes
-            player.TakeDamage(Damage);
             //player gets knocked back from spike
             player.HandleKnockBack();
+            //Player takes damage from spikes
+            player.TakeDamage(Damage);
         }
     }
 }

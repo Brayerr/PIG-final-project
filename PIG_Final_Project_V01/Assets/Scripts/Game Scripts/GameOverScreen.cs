@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 
 public class GameOverScreen : MonoBehaviour
 {
+    public TextMeshProUGUI scoreDisplay;
+    PlayerScore playerScore;
     //Method for Restart Button, Loads the first (playable) scene in the index.
     public void RestartGame()
     {
@@ -21,5 +25,15 @@ public class GameOverScreen : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private void Start()
+    {
+        playerScore = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScore>();
+    }
+
+    private void Update()
+    {
+        scoreDisplay.text = ("You scored: " + playerScore.score);
     }
 }

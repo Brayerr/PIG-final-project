@@ -9,6 +9,7 @@ TagManager:
   - MyCoin
   - Spike
   - Blood
+  - Pause Menu
   layers:
   - Default
   - TransparentFX

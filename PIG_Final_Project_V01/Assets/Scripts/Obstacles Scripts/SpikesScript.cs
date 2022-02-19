@@ -7,7 +7,6 @@ public class SpikesScript : MonoBehaviour
     //Player script reffrence
     Player player;
 
-
     //Setting spike damage
     public int Damage = 1;
 
@@ -16,7 +15,6 @@ public class SpikesScript : MonoBehaviour
     {
         //Player script reffrence
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();        
-
     }
 
     //When colliding with spike

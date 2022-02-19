@@ -20,10 +20,6 @@ public class Player : MonoBehaviour
     //Animator Reference
     Animator animator;
 
-
-
-
-
     //player max health
     public float playerMaxHealth = 5;
     //player current health
@@ -39,16 +35,11 @@ public class Player : MonoBehaviour
     //period of time that the player cant take damage
     public float damageDelay = 1.5f;
 
-
     //vertical knockback force
     public int verticalKnockBackForce = 2;
     //horizontal knockback force
     public int horizontalKnockBackForce = 2;
     
-
-
-
-
     // Start is called before the first frame update        
     void Start()
     {
@@ -68,10 +59,8 @@ public class Player : MonoBehaviour
         danny = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         //find blood game object
         //bloodEffect = GameObject.FindGameObjectWithTag("Blood");
-
         //animator reference
         animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-
     }
 
     // Update is called once per frame
@@ -91,10 +80,7 @@ public class Player : MonoBehaviour
             {
                 //tells bool that player is dead
                 playerIsDead = true;
-                
-                
                 StartCoroutine(DeathDelay());
-                
                 //resets player health to max health
                 currentHealth = playerMaxHealth;
                 //feedback to console
@@ -171,13 +157,14 @@ public class Player : MonoBehaviour
         Debug.Log("isDead");
         //player death animation
         animator.SetBool("isDead", true);
-        yield return new WaitForSeconds(2);
+        GetComponent<PlayerMovment>().enabled = false;
+        yield return new WaitForSeconds(1f);
+        GetComponent<PlayerMovment>().enabled = true;
         //Stop death
         animator.SetBool("isDead", false);
         //player died so removing 1 life
         currentLives--;
         //resets player position to level start position
         transform.position = checkPoint;
-
     }
 }

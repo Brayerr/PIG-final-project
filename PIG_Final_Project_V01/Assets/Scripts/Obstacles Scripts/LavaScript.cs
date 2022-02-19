@@ -20,10 +20,11 @@ public class LavaScript : MonoBehaviour
     //When colliding with lava
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if(coll.gameObject.CompareTag("Player"))
+        if(coll.gameObject.CompareTag("Player") && player.playerCanTakeDamage)
         {
-        //player takes damage from lava
-        player.currentHealth = 0;        
+            //player takes damage from lava
+            player.currentHealth = 0;
+            StartCoroutine(player.PlayerTakeDamageDelay());
         }
     }
 }

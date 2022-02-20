@@ -12,6 +12,8 @@ TagManager:
   - Pause Menu
   - Projectile
   - ProjShredder
+  - GameManager
+  - StartPos
   layers:
   - Default
   - TransparentFX

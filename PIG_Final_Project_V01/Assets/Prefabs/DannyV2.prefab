@@ -144,7 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkPoint: {x: 0, y: 0, z: 0}
-  bloodEffect: {fileID: 0}
+  bloodEffect: {fileID: 2801372156749129084, guid: 7e4f9e30a8bc9f44d8e07ae4ed4de402,
+    type: 3}
   playerMaxHealth: 5
   currentHealth: 0
   playerMaxLives: 3

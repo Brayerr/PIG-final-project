@@ -40,10 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8574378378249304574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d24e37d1b9bb0bb4c9d96f2a1ad26c09, type: 3}
+  m_Script: {fileID: 11500000, guid: 795f8668be1f248438745948f30a18ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1375899974371946737, guid: 03851a1187fa4994d86a32c648bfca5c,
+  projectile: {fileID: 1375899974371946737, guid: 5e6c1fe2b5aa7bc4a9442e474e160ac5,
     type: 3}
-  speed: 7
-  firingDelay: 2
+  speed: 5
+  firingDelay: 3

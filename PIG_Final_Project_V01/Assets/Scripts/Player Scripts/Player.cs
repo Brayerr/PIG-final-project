@@ -70,6 +70,16 @@ public class Player : MonoBehaviour
         PlayerDead(currentHealth);
     }
 
+    private void OnLevelWasLoaded(int level)
+    {
+       FindStartPos();
+    }
+
+    public void FindStartPos()
+    {
+        transform.position = GameObject.FindWithTag("StartPos").transform.position;
+    }
+
     //function that checks player health
     public void PlayerDead(float currentHP)
     {

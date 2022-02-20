@@ -41,14 +41,13 @@ public class PlayerMovment : MonoBehaviour
     public Animator animator;
     int isWalkingHash;
 
-    Ropeswing rS;
+    public Ropeswing rS;
    
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         isWalkingHash = Animator.StringToHash("isWalking");
-        rS = GameObject.FindGameObjectWithTag("Player").GetComponent<Ropeswing>();
     }
 
     // Update is called once per frame

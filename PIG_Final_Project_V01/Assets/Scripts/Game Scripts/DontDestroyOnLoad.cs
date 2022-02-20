@@ -23,7 +23,7 @@ public class DontDestroyOnLoad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (SceneManager.GetActiveScene().buildIndex > 3)
+       if (SceneManager.GetActiveScene().buildIndex > 3 || SceneManager.GetActiveScene().buildIndex == 0)
        {
            Destroy(GameObject.FindWithTag("GameManager"));
        }

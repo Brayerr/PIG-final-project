@@ -209,6 +209,7 @@ MonoBehaviour:
   wallJumpPush: 5
   airDelay: 0.45
   animator: {fileID: 1990909193}
+  rS: {fileID: 6738361615166531460}
 --- !u!114 &1990909199
 MonoBehaviour:
   m_ObjectHideFlags: 0

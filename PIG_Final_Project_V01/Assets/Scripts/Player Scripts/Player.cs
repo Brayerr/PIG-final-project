@@ -50,17 +50,13 @@ public class Player : MonoBehaviour
         //setting up checkpoint values as level start values
         checkPoint = new Vector3(-7.04f, -3.27f, transform.position.z);
         //rigidbody refference
-        rb2d = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+        rb2d = gameObject.GetComponent<Rigidbody2D>();
         //movement script refference
-        playerMovment = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovment>();
-        //spikes script refference
-        spikes = GameObject.FindGameObjectWithTag("Spike").GetComponent<SpikesScript>();
+        playerMovment = gameObject.GetComponent<PlayerMovment>();
         //danny refference
-        danny = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        //find blood game object
-        //bloodEffect = GameObject.FindGameObjectWithTag("Blood");
+        danny = gameObject.GetComponent<Transform>();
         //animator reference
-        animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -74,7 +70,7 @@ public class Player : MonoBehaviour
     {
        FindStartPos();
     }
-
+    
     public void FindStartPos()
     {
         transform.position = GameObject.FindWithTag("StartPos").transform.position;
@@ -159,6 +155,39 @@ public class Player : MonoBehaviour
                 Debug.Log("KB RIGHT");
 
             }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.CompareTag("Spike"))
+        {
+            GameObject test = coll.gameObject;
+            SpikesScript spikeScript = test.GetComponent<SpikesScript>();
+            //player gets knocked back from spike
+            HandleKnockBack();
+            //Player takes damage from spikes
+            TakeDamage(spikeScript.Damage);
+        }
+
+        if (coll.gameObject.CompareTag("Lava") && playerCanTakeDamage)
+        {
+            GameObject test = coll.gameObject;
+            LavaScript lavaScript = test.GetComponent<LavaScript>();
+            //player takes damage from lava
+            currentHealth = 0;
+            StartCoroutine(PlayerTakeDamageDelay());
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //if checkpoint collides with player and player checkpoint isnt equal to this checkpoint
+        if (collision.gameObject.CompareTag("CheckPoint") == true && checkPoint != this.transform.position)
+        {
+            //make players checkpoint this checkpoint
+            checkPoint = this.transform.position;
+            //send message to player
+            Debug.Log("checkpoint saved");
         }
     }
 

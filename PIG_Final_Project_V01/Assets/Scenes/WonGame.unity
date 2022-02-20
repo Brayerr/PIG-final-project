@@ -1527,6 +1527,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 533789562}
+  playerScore: {fileID: 6738361615166531466, guid: 6698aebccec8c6d4ab8cc1639a4965fe,
+    type: 3}
 --- !u!1 &1996241195
 GameObject:
   m_ObjectHideFlags: 0

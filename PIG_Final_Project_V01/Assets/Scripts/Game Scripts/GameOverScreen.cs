@@ -29,7 +29,7 @@ public class GameOverScreen : MonoBehaviour
 
     private void Start()
     {
-        playerScore = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScore>();
+        playerScore = FindObjectOfType<PlayerScore>();
     }
 
     private void Update()

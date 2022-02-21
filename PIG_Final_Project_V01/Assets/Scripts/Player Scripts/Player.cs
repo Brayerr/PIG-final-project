@@ -160,7 +160,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.CompareTag("Spike"))
+        if (coll.gameObject.CompareTag("Spike") || coll.gameObject.CompareTag("Projectile"))
         {
             GameObject test = coll.gameObject;
             SpikesScript spikeScript = test.GetComponent<SpikesScript>();

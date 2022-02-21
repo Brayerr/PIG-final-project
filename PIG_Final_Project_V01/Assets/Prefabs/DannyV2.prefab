@@ -201,7 +201,7 @@ MonoBehaviour:
   isDashing: 0
   wallJumpTime: 0
   wallSlideSpeed: 0.3
-  wallDistance: 0.55
+  wallDistance: 0.2
   wallLayer:
     serializedVersion: 2
     m_Bits: 1024

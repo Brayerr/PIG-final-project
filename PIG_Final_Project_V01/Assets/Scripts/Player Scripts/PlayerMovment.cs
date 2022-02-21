@@ -204,12 +204,12 @@ public class PlayerMovment : MonoBehaviour
         if (control.m_FacingRight)
         {
             //raycast to jump from wall on the right side
-            WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(wallDistance, 0), wallDistance, wallLayer);            
+            WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(wallDistance, 0), wallDistance, wallLayer);
         }
         else
         {
             //raycast to jump from wall on the left side
-            WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(-wallDistance, 0), wallDistance, wallLayer);            
+            WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(-wallDistance, 0), wallDistance, wallLayer);  
         }
 
         if (WallCheckHit && !control.m_Grounded && horizontalMove != 0)

@@ -17,7 +17,6 @@ public class PlatformAttach : MonoBehaviour
     }
 
     //clear the player so it stop adjusting its location.
-
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag(PLAYER_TAG))

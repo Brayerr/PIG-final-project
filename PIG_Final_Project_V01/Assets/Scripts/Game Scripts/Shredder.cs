@@ -11,7 +11,7 @@ public class Shredder : MonoBehaviour
     void Start()
     {
         //player script reffrence
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player = GameObject.FindObjectOfType<Player>();
     }
 
     //Trigger function

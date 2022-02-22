@@ -11,8 +11,6 @@ public class Player : MonoBehaviour
     public Vector3 checkPoint;
     //movement script refference
     PlayerMovment playerMovment;
-    //spikes script refference
-    SpikesScript spikes;
     //danny refference
     Transform danny;
     //blood reference
@@ -34,6 +32,8 @@ public class Player : MonoBehaviour
     public bool playerCanTakeDamage = true;
     //period of time that the player cant take damage
     public float damageDelay = 1.5f;
+    //period of time before player will respawn.
+    public float deathAnimDelay = 1.2f;
 
     //vertical knockback force
     public int verticalKnockBackForce = 2;
@@ -68,17 +68,20 @@ public class Player : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
+        // at the start of the game the player will be spawned at the pre determind start position.
        FindStartPos();
     }
     
     public void FindStartPos()
     {
+        // will move the player to the position of the object with the tag StartPos.
         transform.position = GameObject.FindWithTag("StartPos").transform.position;
     }
 
     //function that checks player health
     public void PlayerDead(float currentHP)
     {
+        // as long as the player has more then 0 lives his health can be reduced.
         if (currentLives > 0)
         {
             //if player health hits 0
@@ -95,6 +98,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+            // the player has 0 lives so he will be moved to the game over scene.
             SceneManager.LoadScene("GameOver");
         }
     }
@@ -153,7 +157,6 @@ public class Player : MonoBehaviour
                 //, he gets knockbacked to the right
                 rb2d.AddForce(Vector2.right * horizontalKnockBackForce);
                 Debug.Log("KB RIGHT");
-
             }
         }
     }
@@ -172,8 +175,6 @@ public class Player : MonoBehaviour
 
         if (coll.gameObject.CompareTag("Lava") && playerCanTakeDamage)
         {
-            GameObject test = coll.gameObject;
-            LavaScript lavaScript = test.GetComponent<LavaScript>();
             //player takes damage from lava
             currentHealth = 0;
             StartCoroutine(PlayerTakeDamageDelay());
@@ -197,7 +198,7 @@ public class Player : MonoBehaviour
         //player death animation
         animator.SetBool("isDead", true);
         GetComponent<PlayerMovment>().enabled = false;
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(deathAnimDelay);
         GetComponent<PlayerMovment>().enabled = true;
         //Stop death
         animator.SetBool("isDead", false);

@@ -11,10 +11,10 @@ public class CharacterController : MonoBehaviour
 	
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	public bool m_Grounded;            // Whether or not the player is grounded.
-	private Rigidbody2D m_Rigidbody2D;
+	private Rigidbody2D m_Rigidbody2D; // Player rigidbody refrence.
 	[HideInInspector] public bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
-	public PlayerMovment movment;
+	public PlayerMovment movment; // Player movment refrence.
    
 	[Header("Events")]
 	[Space]

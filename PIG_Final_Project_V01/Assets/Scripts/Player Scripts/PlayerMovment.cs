@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class PlayerMovment : MonoBehaviour
 {
+    //scripts references.
     public CharacterController control;
     public Rigidbody2D rb;
     public Player player;
+    public Ropeswing rS;
 
+    //god mode variables.
     public int godModeForce;
     public bool godModeActive = false;
 
+    // dash and movement variables.
     public float runSpeed = 40f;
     public float dashForce;
     public float startDashTimer;
-
     public float dashCD = 1f;
     public float nextDashTime = 0f;
-
     float dashDirection;
     float currentDashTimer;
     public float horizontalMove = 0f;
@@ -28,7 +30,7 @@ public class PlayerMovment : MonoBehaviour
     //wall jump variables.
     public float wallJumpTime = 0.2f;
     public float wallSlideSpeed = 0.3f;
-    public float wallDistance = 0.12f;
+    public float wallDistance;
     bool isWallSliding = false;
     RaycastHit2D WallCheckHit;
     float jumpTime;
@@ -41,12 +43,12 @@ public class PlayerMovment : MonoBehaviour
     public Animator animator;
     int isWalkingHash;
 
-    public Ropeswing rS;
-   
     // Start is called before the first frame update
     void Start()
     {
+        //Animator reference.
         animator = GetComponent<Animator>();
+        //Transfering to int for animation optimization.
         isWalkingHash = Animator.StringToHash("isWalking");
     }
 
@@ -56,11 +58,10 @@ public class PlayerMovment : MonoBehaviour
         //setting up horizontal movement keys
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        
+        //start walking animation.
         bool isWalking = animator.GetBool("isWalking");
         bool playerRunning = Input.GetButton("Horizontal");
          
-
         //setting jump key
         if (Input.GetButtonDown("Jump"))
         {
@@ -69,7 +70,6 @@ public class PlayerMovment : MonoBehaviour
             //jump animation starts
             animator.SetBool("isJumping", true);
             animator.SetBool(isWalkingHash, false);
-            
         }
 
         //Animation activation
@@ -95,18 +95,20 @@ public class PlayerMovment : MonoBehaviour
         }
         else
         {
+            //if the player isnt grounded set grounded animation to false.
             animator.SetBool("grounded", false);
         }
 
+        // if the player release the jump key set jumping animation to false.
         if (Input.GetButtonUp("Jump"))
         {
             animator.SetBool("isJumping", false);
         }
 
-
         //setting wall jump key
         if (isWallSliding && Input.GetButtonDown("Jump"))
         {
+            //setting bool to true, adding velocity to the player, pausing air control, setting bool to false.
             jump = true;
             rb.velocity = new Vector2(-Input.GetAxisRaw("Horizontal") * wallJumpPush, wallJumpForce);
             StartCoroutine(AirControlDelay());
@@ -119,8 +121,9 @@ public class PlayerMovment : MonoBehaviour
             //if left shift is pressed and not standing still
             if (Input.GetKeyDown(KeyCode.LeftShift) && horizontalMove != 0)
             {
+                //setting bool to true, setting timer to start, adding velocity to the player, decide which direction to dash,
+                //calculating next dash time.
                 isDashing = true;
-                animator.SetTrigger("isDashing 0");                
                 currentDashTimer = startDashTimer;
                 rb.velocity = Vector2.zero;
                 dashDirection = (int)horizontalMove;
@@ -128,16 +131,21 @@ public class PlayerMovment : MonoBehaviour
             }
         }
 
+        //when the player is on a rope and moving right trigger rope animation.
         if (rS.isAttached == true &&  horizontalMove > 0)
         {
+            //set animation bool.
             animator.SetBool("isSwinging", true);
         }
-        else if(rS.isAttached == true && horizontalMove < 0)
+        //when the player is on a rope and moving left trigger rope animation.
+        else if (rS.isAttached == true && horizontalMove < 0)
         {
+            //set animation bool.
             animator.SetBool("isSwinging", true);
         }
         else
         {
+            //set animation bool to false.
             animator.SetBool("isSwinging", false);
         }
 
@@ -188,16 +196,17 @@ public class PlayerMovment : MonoBehaviour
         //actual dash code and CD reset
         if (isDashing)
         {
+            //add velocity to player, reconfigure dash timer, reset dash cd.
             rb.velocity = new Vector2(dashForce, 0) * dashDirection;
             currentDashTimer -= Time.deltaTime;
             dashCD = 2;
             dashCD -= Time.deltaTime;
 
+            //if the timer is less then 0 the player cant dash.
             if (currentDashTimer <= 0)
             {
                 isDashing = false;
             }
-
         }
 
         //wall jump
@@ -209,15 +218,17 @@ public class PlayerMovment : MonoBehaviour
         else
         {
             //raycast to jump from wall on the left side
-            WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(-wallDistance, 0), wallDistance, wallLayer);  
+            WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(-wallDistance, 0), wallDistance, wallLayer);
         }
 
+        //will only trigger when the player is near a wall not on the ground and pressing key in wall direction.
         if (WallCheckHit && !control.m_Grounded && horizontalMove != 0)
         {
-            //activating the wall slide. 
+            //activating the wall slide and start timer on how long until the player will fall from the wall. 
             isWallSliding = true;
             jumpTime = Time.time + wallJumpTime;
         }
+        //when the timer runs out the player will stop wall sliding and fall.
         else if (jumpTime < Time.time)
         {            
             isWallSliding = false;
@@ -234,6 +245,7 @@ public class PlayerMovment : MonoBehaviour
         }
     }
     
+    // delaying the player from controling himself after wall jumping.
     IEnumerator AirControlDelay()
     {
         control.m_AirControl = false;

@@ -7,8 +7,12 @@ using TMPro;
 
 public class GameOverScreen : MonoBehaviour
 {
+    // score text reference.
     public TextMeshProUGUI scoreDisplay;
+
+    // script reference.
     PlayerScore playerScore;
+
     //Method for Restart Button, Loads the first (playable) scene in the index.
     public void RestartGame()
     {
@@ -29,11 +33,13 @@ public class GameOverScreen : MonoBehaviour
 
     private void Start()
     {
+        //refrencing to the script to have access to player score. 
         playerScore = FindObjectOfType<PlayerScore>();
     }
 
     private void Update()
     {
+        //setting the text to the player final score.
         scoreDisplay.text = ("You scored: " + playerScore.score);
     }
 }

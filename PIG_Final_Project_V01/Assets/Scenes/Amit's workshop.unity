@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3035,16 +3035,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rope (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4762167715613305079, guid: 9354c141ae04acc49bb9e1934b92a6af,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -2.341003
-      objectReference: {fileID: 0}
-    - target: {fileID: 4762167715613305079, guid: 9354c141ae04acc49bb9e1934b92a6af,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: -9.613362
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9354c141ae04acc49bb9e1934b92a6af, type: 3}
@@ -32378,6 +32368,11 @@ PrefabInstance:
         type: 3}
       propertyPath: deathAnimDelay
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738361615370223866, guid: 2bf6975a322229a41b71b331150edbe3,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7846045906289082630, guid: 2bf6975a322229a41b71b331150edbe3,
         type: 3}

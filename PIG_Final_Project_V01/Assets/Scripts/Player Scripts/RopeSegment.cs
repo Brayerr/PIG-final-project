@@ -6,6 +6,7 @@ public class RopeSegment : MonoBehaviour
 {
     //track the gameObject of segmants above and below itself
     public GameObject connectedAbove, connectedBelow;
+    public float linkDistance;
     void Start()
     {
         //assign connected object to above
@@ -19,7 +20,7 @@ public class RopeSegment : MonoBehaviour
             aboveSegment.connectedBelow = gameObject;
             //assign the anchor of this hingejoint to be at the bottom of the above object
             float spriteBottom = connectedAbove.GetComponent<SpriteRenderer>().bounds.size.y;
-            GetComponent<HingeJoint2D>().connectedAnchor = new Vector2(0, spriteBottom * -1);
+            GetComponent<HingeJoint2D>().connectedAnchor = new Vector2(0, spriteBottom * linkDistance * -1);
         }
         else
         {

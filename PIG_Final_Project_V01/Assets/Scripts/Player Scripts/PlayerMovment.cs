@@ -61,7 +61,7 @@ public class PlayerMovment : MonoBehaviour
         //start walking animation.
         bool isWalking = animator.GetBool("isWalking");
         bool playerRunning = Input.GetButton("Horizontal");
-         
+
         //setting jump key
         if (Input.GetButtonDown("Jump"))
         {
@@ -77,7 +77,7 @@ public class PlayerMovment : MonoBehaviour
         if (!isWalking && playerRunning)
         {
             //walking animation starts
-            animator.SetBool(isWalkingHash,true);
+            animator.SetBool(isWalkingHash, true);
         }
         //if Left or Right are unpressed
         if (isWalking && !playerRunning)
@@ -86,7 +86,7 @@ public class PlayerMovment : MonoBehaviour
             animator.SetBool(isWalkingHash, false);
         }
         //if player is on the ground
-        if(control.m_Grounded)
+        if (control.m_Grounded)
         {
             //stop jumping animation
             animator.SetBool("grounded", true);
@@ -114,7 +114,7 @@ public class PlayerMovment : MonoBehaviour
             StartCoroutine(AirControlDelay());
             isWallSliding = false;
         }
-            
+
         //dash code + dash cooldown
         if (Time.time > nextDashTime)
         {
@@ -132,7 +132,7 @@ public class PlayerMovment : MonoBehaviour
         }
 
         //when the player is on a rope and moving right trigger rope animation.
-        if (rS.isAttached == true &&  horizontalMove > 0)
+        if (rS.isAttached == true && horizontalMove > 0)
         {
             //set animation bool.
             animator.SetBool("isSwinging", true);
@@ -160,26 +160,25 @@ public class PlayerMovment : MonoBehaviour
             GodModeOff();
 
         //vertical movement for god mode
-        if (Input.GetKeyDown(KeyCode.DownArrow) && godModeActive)
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && godModeActive)
         {
             rb.AddForce(Vector2.down * godModeForce);
         }
 
-
         //if pressed up arrow the player will go up
-        if (Input.GetKeyDown(KeyCode.UpArrow) && godModeActive)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && godModeActive)
         {
             rb.AddForce(Vector2.up * godModeForce);
         }
 
         //if pressed right arrow the player will go right
-        if (Input.GetKeyDown(KeyCode.RightArrow) && godModeActive)
+        if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && godModeActive)
         {
             rb.AddForce(Vector2.right * godModeForce);
         }
 
         //if pressed left arrow the player will go left
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && godModeActive)
+        if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && godModeActive)
         {
             rb.AddForce(Vector2.left * godModeForce);
         }
@@ -189,7 +188,7 @@ public class PlayerMovment : MonoBehaviour
     private void FixedUpdate()
     {
         //actual moving player in fixed update
-        control.Move(horizontalMove* Time.fixedDeltaTime, jump);
+        control.Move(horizontalMove * Time.fixedDeltaTime, jump);
         //set jump back to false after jumping
         jump = false;
 
@@ -230,7 +229,7 @@ public class PlayerMovment : MonoBehaviour
         }
         //when the timer runs out the player will stop wall sliding and fall.
         else if (jumpTime < Time.time)
-        {            
+        {
             isWallSliding = false;
         }
 
@@ -244,7 +243,7 @@ public class PlayerMovment : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, wallSlideSpeed, float.MaxValue));
         }
     }
-    
+
     // delaying the player from controling himself after wall jumping.
     IEnumerator AirControlDelay()
     {
